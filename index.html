@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holy Spirit Fellowship Global Ministry</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.left, .right {
+    flex: 1;
+}
+    body{
+      background:#f4f8fc;
+      color:#222;
+      line-height:1.6;
+    }
+
+    nav{
+      background:#0d2d62;
+      padding:14px 10px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin:0 12px;
+      font-size:15px;
+      font-weight:bold;
+    }social-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.whatsapp {
+    background: #25D366;
+}
+
+.youtube {
+    background: #FF0000;
+}.social-links {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}.title {
+    text-align: center;
+}footer {
+    margin-top: 30px;
+container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.whatsapp, .youtube {
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.whatsapp {
+    background-color: #25D366;
+}
+
+.youtube {
+    background-color: #FF0000;
+
+}
+    header{
+      min-height:100vh;
+      background:linear-gradient(rgba(8,27,66,0.75), rgba(8,27,66,0.75)), url('cover.jpg');
+      background-size:cover;
+      background-position:center;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero{
+      max-width:850px;
+    }
+
+    .hero h1{
+      font-size:3rem;
+      margin-bottom:15px;
+    }
+
+    .hero h2{
+      font-size:1.4rem;
+      margin-bottom:15px;
+      color:#ffd54f;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      margin-bottom:20px;
+    } whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.youtube {
+    background: #FF0000;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+
+    .btn{
+      display:inline-block;
+      background:#ffd54f;
+      color:#111;
+      padding:12px 24px;
+      text-decoration:none;
+      border-radius:30px;
+      font-weight:bold;
+      margin:8px;
+    }
+
+    .btn:hover{
+      background:#ffca28;
+    }
+
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    .title{
+      text-align:center;
+      font-size:2rem;
+      color:#0d2d62;
+      margin-bottom:30px;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      max-width:320px;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      text-align:center;
+    .right{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.right a{
+    display: inline-block;
+    margin: 10px;
+}
+
+.card h3{
+    color:#0d2d62;
+    margin-bottom:10px;
+}
+
+/* Hover effects */
+.whatsapp:hover{
+    background: #1ebe5d;
+}
+
+.youtube:hover{
+    background: #cc0000;
+}
+
+/* Verse box (separate block) */
+.verse-box{
+    background: linear-gradient(135deg,#0d2d62,#1c4a96);
+    color:#fff;
+    border-radius:20px;
+    padding:40px 20px;
+    text-align:center;
+    font-size:1.2rem;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+    .donation-box, .contact-box{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      text-align:center;
+    }
+
+    .donation-box p, .contact-box p{
+      margin:10px 0;
+      font-size:1.05rem;
+    }
+
+    .social-links a{
+      display:inline-block;
+      margin:10px;
+      padding:12px 20px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:bold;
+      color:white;
+    }
+
+    <a class="whatsapp" href="https://wa.me/918341023058" target="_blank">
+    WhatsApp
+</a>
+
+<a class="youtube" href="https://www.youtube.com/@hfgmministry" target="_blank">
+    YouTube
+</a>
+
+    .youtube{youtube {
+    background: #FF0000;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+      background:#FF0000;
+    }
+
+    footer{
+      background:#0d2d62;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:30px;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.1rem;
+      }
+
+      .hero h2{
+        font-size:1.1rem;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      nav a{
+        display:inline-block;
+        margin:6px 8px;
+      }
+    }.social-links a {
+    text-decoration: non
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#verse">Verse</a>
+    <a href="#donation">Donation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <div class="hero">
+      <h1>Holy Spirit Fellowship Global Ministry</h1>
+      <h2>A Place of Prayer • Healing • Deliverance</h2>
+      <p>Welcome to our ministry. Experience the power of God through prayer, healing, faith, and the Word of God.</p>
+      <p><strong>“The Spirit of the Lord is upon Me” – Luke 4:18</strong></p>
+      <a href="#about" class="btn">Learn More</a>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="title">About Our Ministry / మా సేవ గురించి</h2>
+    <div class="about">
+      <div style="text-align:center;">
+        <img src="your-photo.jpg" alt="Pendyala Suresh">
+      </div>
+      <div>
+        <p>
+          Holy Spirit Fellowship Global Ministry is committed to sharing the love of Jesus Christ through prayer, healing, deliverance, worship, and the teaching of God’s Word.
+        </p>
+        <br>
+        <p>
+          మా పరిచర్య యొక్క లక్ష్యం ప్రార్థన, స్వస్థత, విమోచన, పేదలకు సహాయం, విధవలు మరియు అనాథలకు ఆదరణ ఇవ్వడం.
+        </p>
+        <br>
+        <p>
+          We welcome everyone to join us in fellowship and experience the transforming power of the Holy Spirit.
+        </p>
+      </div>
+    </div>
+  </section>
+<div class="container">
+<div class="left">
+  
+
+ 
+  </section>
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <section id="services">
+           <section id="services">
+
+<div class="container">
+
+    <div class="left">
+        <h2>Our Services</h2>
+        <p>Prayer</p>
+        <p>Healing</p>
+        <p>Deliverance</p>
+        <p>Helping the Poor</p>
+        <p>Widows Care</p>
+        <p>Orphans Support</p>
+        <p>Food Distribution</p>
+    </div>
+
+   <div class="right">
+    <h2>Bible Verse</h2>
+    <p>"The Spirit of the Lord is upon Me" – Luke 4:18</p>
+
+    <h2>Donation</h2>
+    <p>Google Pay / PhonePe: 8341023058</p>
+    <p>Account Name: Pendyala Suresh</p>
+
+    <h2>Connect With Us</h2>
+
+   <div style="text-align:center; margin-top:15px;">
+    <a href="https://wa.me/918341023058" target="_blank" style="display:inline-block; background:#25D366; color:white; text-decoration:none; padding:12px 25px; border-radius:8px; font-weight:bold; margin:5px;">
+        WhatsApp
+    </a>
+
+    <a href="https://www.youtube.com/@hfgmministry" target="_blank" style="display:inline-block; background:#FF0000; color:white; text-decoration:none; padding:12px 25px; border-radius:8px; font-weight:bold; margin:5px;">
+        YouTube
+    </a>
+</div>
+</section>
+  
+ <footer>
+    <p>© 2026 Holy Spirit Fellowship Global Ministry. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
