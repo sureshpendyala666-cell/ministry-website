@@ -6,174 +6,185 @@
 <title>HFGM Ministry</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
 body{
-margin:0;
-font-family:Arial;
-background:#111;
+background:#0f2027;
 color:white;
 text-align:center;
 }
 
-/* NAVBAR */
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-background:#0a1f3d;
+/* SLIDER */
+.slider{
+position:relative;
+height:300px;
+overflow:hidden;
 }
 
-.nav h2{
-color:#fff;
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:1s;
 }
 
-.nav a{
-color:white;
-margin:0 10px;
-text-decoration:none;
-}
+.active{opacity:1}
 
-/* HERO */
+/* HERO TEXT */
 .hero{
-padding:40px 20px;
+padding:20px;
 }
 
 .hero h1{
 color:#ffd700;
-font-size:32px;
-text-shadow:0 0 20px gold;
+text-shadow:0 0 10px gold;
 }
 
-.hero p{
-color:#ccc;
+.dynamic{
+color:#00e5ff;
+font-weight:bold;
 }
 
-/* PROFILE IMAGE */
-.profile-img{
-width:180px;
-height:180px;
+/* PROFILE */
+.profile{
+width:150px;
+height:150px;
 border-radius:50%;
-border:5px solid gold;
+border:4px solid gold;
+margin:15px auto;
 object-fit:cover;
-margin-top:20px;
+box-shadow:0 0 20px gold;
 }
 
 /* BUTTONS */
 .btn{
 display:inline-block;
-padding:12px 20px;
 margin:10px;
+padding:10px 20px;
 border-radius:25px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:bold;
 }
 
-.whatsapp{background:#25D366;}
-.youtube{background:#FF0000;}
-.donate{background:#28a745;}
+.whatsapp{background:green}
+.youtube{background:red}
+.support{background:#00c853}
 
 /* SECTION */
 .section{
-background:#f5f5f5;
+background:white;
 color:#333;
-margin:30px;
+margin:20px;
 padding:20px;
 border-radius:15px;
 }
 
+/* CARDS */
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
 }
 
 .cards img{
-width:250px;
+width:100%;
+height:150px;
 border-radius:10px;
+object-fit:cover;
 }
 
 /* SERVICES */
-.services span{
-display:inline-block;
-margin:10px;
+.services{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.service{
+background:#eee;
+padding:10px;
+border-radius:10px;
 }
 
 /* FORM */
-input, textarea{
+input,textarea{
 width:90%;
+max-width:400px;
 padding:10px;
-margin:10px;
-border-radius:10px;
-border:none;
+margin:8px;
+border-radius:8px;
+border:1px solid #ccc;
 }
 
-/* FLOAT WHATSAPP */
-.float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:12px;
-border-radius:50%;
+button{
+padding:10px 20px;
+background:#0b4da2;
+color:white;
+border:none;
+border-radius:20px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.slider{height:200px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="nav">
-<h2>HFGM Ministry</h2>
-<div>
-<a href="#">Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#services">Services</a>
-<a href="#prayer">Prayer</a>
-<a href="#donate">Donate</a>
-</div>
+<!-- SLIDER -->
+<div class="slider">
+<img src="slide1.jpg" class="slide active">
+<img src="slide2.jpg" class="slide">
+<img src="slide3.jpg" class="slide">
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <h1>Holy Spirit Fellowship Global Ministry</h1>
-<p>A Place of Prayer • Healing • Deliverance</p>
-<p>Serving India & Reaching Nations</p>
 
-<img src="your-photo.jpg" class="profile-img">
+<p>A Place of <span class="dynamic">Prayer</span></p>
+
+<img src="profile.jpg" class="profile">
 
 <h3>Preacher: Bro. Pendyala Suresh</h3>
-<p>📍 Tadepalligudem, West Godavari</p>
+<p>📍 Tadepalligudem</p>
 <p>📞 +91 8341023058</p>
 
-<a href="https://wa.me/918341023058" class="btn whatsapp">WhatsApp Prayer</a>
+<a href="https://wa.me/918341023058" class="btn whatsapp">WhatsApp</a>
 <a href="https://youtube.com/@hfgmministry" class="btn youtube">YouTube</a>
-<a href="#donate" class="btn donate">Support Ministry</a>
+<a href="#" class="btn support">Support</a>
 </div>
 
-<!-- GALLERY -->
-<div class="section" id="gallery">
+<!-- WORK -->
+<div class="section">
 <h2>Our Ministry Work</h2>
 <div class="cards">
-<img src="cover.jpg">
-<img src="cover.jpg">
-<img src="cover.jpg">
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
 </div>
 </div>
 
 <!-- SERVICES -->
-<div class="section" id="services">
+<div class="section">
 <h2>Our Ministry Services</h2>
 <div class="services">
-<span>🙏 Prayer & Worship</span>
-<span>🔥 Healing & Deliverance</span>
-<span>🍲 Food Distribution</span>
-<span>🏠 Orphans Care</span>
+<div class="service">🙏 Prayer</div>
+<div class="service">🔥 Healing</div>
+<div class="service">🍲 Food</div>
+<div class="service">🏠 Orphans</div>
+<div class="service">🏥 Medical</div>
+<div class="service">🎓 Education</div>
 </div>
 </div>
 
-<!-- VIDEO -->
+<!-- YOUTUBE -->
 <div class="section">
 <h2>YouTube Video</h2>
 <iframe width="100%" height="250"
@@ -181,36 +192,48 @@ src="https://www.youtube.com/embed/e0BdlIK9bUA"
 frameborder="0" allowfullscreen></iframe>
 </div>
 
-<!-- PRAYER FORM -->
-<div class="section" id="prayer">
+<!-- PRAYER -->
+<div class="section">
 <h2>Prayer Request</h2>
-<input type="text" id="name" placeholder="Your Name">
-<input type="text" id="phone" placeholder="Phone Number">
-<textarea id="message" placeholder="Your Prayer Request"></textarea>
-<br>
-<button onclick="sendWhatsApp()" class="btn whatsapp">Send Prayer</button>
+
+<form onsubmit="sendPrayer();return false;">
+<input type="text" id="name" placeholder="Your Name" required><br>
+<textarea id="msg" placeholder="Your Prayer"></textarea><br>
+<button>Send Prayer</button>
+</form>
 </div>
 
-<!-- DONATION -->
-<div class="section" id="donate">
-<h2>Support Ministry</h2>
-<p>Scan QR to donate</p>
-<img src="qr.jpg" width="200">
+<!-- FOOTER -->
+<div style="padding:20px;">
+<p>© 2026 HFGM Ministry</p>
 </div>
-
-<!-- FLOAT BUTTON -->
-<a href="https://wa.me/918341023058" class="float">💬</a>
 
 <script>
-function sendWhatsApp(){
-var name=document.getElementById("name").value;
-var phone=document.getElementById("phone").value;
-var message=document.getElementById("message").value;
+/* SLIDER */
+let slides=document.querySelectorAll(".slide");
+let index=0;
 
-var url="https://wa.me/918341023058?text="
-+encodeURIComponent("Prayer Request:\nName:"+name+"\nPhone:"+phone+"\nMessage:"+message);
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},3000);
 
-window.open(url,'_blank');
+/* TEXT CHANGE */
+let words=["Prayer","Healing","Deliverance","Blessing"];
+let i=0;
+setInterval(()=>{
+document.querySelector(".dynamic").textContent=words[i];
+i=(i+1)%words.length;
+},2000);
+
+/* WHATSAPP */
+function sendPrayer(){
+let name=document.getElementById("name").value;
+let msg=document.getElementById("msg").value;
+
+let text="Prayer Request%0AName:"+name+"%0AMessage:"+msg;
+window.open("https://wa.me/918341023058?text="+text);
 }
 </script>
 
