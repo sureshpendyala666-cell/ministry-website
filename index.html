@@ -6,153 +6,204 @@
 <title>HFGM Ministry</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+
 body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(#0a1a22,#0f2b36);
-color:white;
-text-align:center;
+  background:linear-gradient(#0a1a22,#0f2b36);
+  color:white;
+  text-align:center;
 }
 
 /* HERO */
 .hero{
-padding:40px 20px;
+  padding:45px 20px;
 }
 
 .hero h1{
-color:gold;
-text-shadow:0 0 20px yellow;
+  color:gold;
+  text-shadow:0 0 20px yellow;
+  font-size:34px;
 }
 
 .profile{
-width:150px;
-height:150px;
-border-radius:50%;
-border:5px solid gold;
-box-shadow:0 0 30px gold;
-margin:20px auto;
-object-fit:cover;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:5px solid gold;
+  box-shadow:0 0 30px gold;
+  margin:20px auto;
+  object-fit:cover;
+  display:block;
 }
 
 /* BUTTONS */
 .btn{
-padding:10px 20px;
-border-radius:25px;
-margin:5px;
-border:none;
-color:white;
-font-weight:bold;
-cursor:pointer;
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:30px;
+  margin:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.whatsapp{background:#25D366;}
-.youtube{background:#FF0000;}
-.support{background:#28a745;}
+.whatsapp{background:#25D366}
+.youtube{background:#ff0000}
+.support{background:#28a745}
 
 /* SECTION */
 .section{
-background:white;
-color:black;
-margin:20px;
-padding:20px;
-border-radius:20px;
-box-shadow:0 0 10px #ccc;
+  background:white;
+  color:#222;
+  margin:22px auto;
+  padding:25px;
+  width:90%;
+  max-width:1100px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-/* SLIDER */
-.slider{
-display:flex;
-overflow:hidden;
+.section h2{
+  color:#0b4da2;
+  margin-bottom:20px;
+  font-size:30px;
 }
 
-.slide{
-min-width:100%;
-transition:0.5s;
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
 
-.slide img{
-width:100%;
-border-radius:15px;
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+}
+
+/* SERVICES FIX */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.service{
+  background:#f5f8ff;
+  color:#0b4da2;
+  padding:18px;
+  border-radius:15px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
 /* FORM */
 input,textarea{
-width:95%;
-padding:12px;
-margin:5px;
-border-radius:10px;
-border:1px solid #ccc;
+  width:90%;
+  max-width:520px;
+  padding:13px;
+  margin:8px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:15px;
 }
 
-button.submit{
-background:#007bff;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:20px;
+textarea{height:120px}
+
+button{
+  padding:13px 28px;
+  background:#0b4da2;
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  padding:25px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
-.hero h1{font-size:22px;}
+  .hero h1{font-size:25px}
+  .section h2{font-size:24px}
+  .profile{width:135px;height:135px}
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Holy Spirit Fellowship Global Ministry</h1>
-<p>A Place of Prayer • Healing • Deliverance</p>
+  <h1>Holy Spirit Fellowship Global Ministry</h1>
+  <p>A Place of Prayer • Healing • Deliverance</p>
 
-<img src="your-photo.jpg" class="profile">
+  <img src="your-photo.jpg" class="profile" alt="Pastor Photo">
 
-<h3>Preacher: Bro. Pendyala Suresh</h3>
-<p>📍 Tadepalligudem</p>
-<p>📞 +91 8341023058</p>
+  <h3>Preacher: Bro. Pendyala Suresh</h3>
+  <p>📍 Tadepalligudem</p>
+  <p>📞 +91 8341023058</p>
 
-<button class="btn whatsapp">WhatsApp</button>
-<button class="btn youtube">YouTube</button>
-<button class="btn support">Support</button>
+  <a href="https://wa.me/918341023058" class="btn whatsapp">WhatsApp</a>
+  <a href="https://youtube.com/@hfgmministry" class="btn youtube">YouTube</a>
+  <a href="https://wa.me/918341023058" class="btn support">Support</a>
 </div>
 
-<!-- SLIDER -->
+<!-- MINISTRY WORK -->
 <div class="section">
-<h2>Our Ministry Work</h2>
-
-<div class="slider" id="slider">
-<div class="slide"><img src="cover.jpg"></div>
-<div class="slide"><img src="cover.jpg"></div>
-<div class="slide"><img src="cover.jpg"></div>
-</div>
+  <h2>Our Ministry Work</h2>
+  <div class="gallery">
+    <img src="cover.jpg" alt="Ministry Work 1">
+    <img src="g.jpg" alt="Ministry Work 2">
+    <img src="cover.jpg" alt="Ministry Work 3">
+  </div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
-<h2>Our Services</h2>
-<p>🙏 Prayer | 🔥 Healing | 🍞 Food | 🏠 Orphans Care</p>
+  <h2>Our Ministry Services</h2>
+
+  <div class="services">
+    <div class="service">🙏 Prayer</div>
+    <div class="service">🔥 Healing</div>
+    <div class="service">🍲 Food Distribution</div>
+    <div class="service">🏠 Orphans Care</div>
+    <div class="service">🏥 Medical Camps</div>
+    <div class="service">🎓 Education Support</div>
+  </div>
 </div>
 
 <!-- YOUTUBE -->
 <div class="section">
-<h2>YouTube</h2>
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/e0BdlIK9bUA"
-frameborder="0" allowfullscreen></iframe>
+  <h2>YouTube</h2>
+  <iframe width="100%" height="260"
+    src="https://www.youtube.com/embed/e0BdlIK9bUA"
+    frameborder="0" allowfullscreen>
+  </iframe>
 </div>
 
-<!-- PRAYER -->
+<!-- PRAYER FORM -->
 <div class="section">
-<h2>Prayer Request</h2>
+  <h2>🙏 Prayer Request</h2>
 
-<input id="name" placeholder="Your Name">
-<input id="phone" placeholder="Phone">
-<textarea id="prayer" placeholder="Prayer Request"></textarea>
-
-<button class="submit" onclick="submitPrayer()">Submit Prayer</button>
+  <input id="name" placeholder="Your Name / మీ పేరు">
+  <input id="phone" placeholder="Phone Number">
+  <textarea id="prayer" placeholder="Prayer Request / మీ ప్రార్థన"></textarea>
+  <br>
+  <button onclick="submitPrayer()">Submit Prayer</button>
 </div>
+
+<footer>
+  <p>© 2026 Holy Spirit Fellowship Global Ministry</p>
+  <p>All Are Welcome 🙏</p>
+</footer>
 
 <!-- FIREBASE -->
 <script type="module">
@@ -160,45 +211,36 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
-apiKey: "AIzaSyBlyi5hI-jSSyIf-H9rnpP_4Ldj6Cfpqu8",
-authDomain: "hfgm-ministry.firebaseapp.com",
-projectId: "hfgm-ministry",
-storageBucket: "hfgm-ministry.firebasestorage.app",
-messagingSenderId: "1079389581104",
-appId: "1:1079389581104:web:3086069ef3d1a09c7fe2f5"
+  apiKey: "AIzaSyBlyi5hI-jSSyIf-H9rnpP_4Ldj6Cfpqu8",
+  authDomain: "hfgm-ministry.firebaseapp.com",
+  projectId: "hfgm-ministry",
+  storageBucket: "hfgm-ministry.firebasestorage.app",
+  messagingSenderId: "1079389581104",
+  appId: "1:1079389581104:web:3086069ef3d1a09c7fe2f5"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 window.submitPrayer = async function(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let prayer=document.getElementById("prayer").value;
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let prayer=document.getElementById("prayer").value;
 
-if(!name || !phone || !prayer){
-alert("Fill all fields");
-return;
+  if(!name || !phone || !prayer){
+    alert("Please fill all fields");
+    return;
+  }
+
+  await addDoc(collection(db,"prayers"),{
+    name:name,
+    phone:phone,
+    prayer:prayer,
+    time:new Date()
+  });
+
+  alert("Prayer Submitted 🙏");
 }
-
-await addDoc(collection(db,"prayers"),{name,phone,prayer});
-alert("Prayer Submitted 🙏");
-}
-</script>
-
-<!-- AUTO SLIDER -->
-<script>
-let index=0;
-let slides=document.querySelectorAll(".slide");
-
-setInterval(()=>{
-index++;
-if(index>=slides.length) index=0;
-
-document.getElementById("slider").style.transform=
-translateX(-${index*100}%);
-
-},3000);
 </script>
 
 </body>
