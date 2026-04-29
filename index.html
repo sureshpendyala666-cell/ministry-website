@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,172 +8,161 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(135deg,#071c24,#123746);color:white;text-align:center}
 
-body{
-  background:linear-gradient(#0a1a22,#0f2b36);
-  color:white;
-  text-align:center;
+/* NAVBAR */
+.navbar{
+  position:sticky;top:0;z-index:999;
+  background:#071c24;padding:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,.4)
 }
+.navbar a{
+  color:white;text-decoration:none;
+  margin:6px;padding:8px 12px;
+  display:inline-block;border-radius:20px;
+}
+.navbar a:hover{background:#0b4da2}
 
 /* HERO */
 .hero{
-  padding:45px 20px;
+  padding:60px 20px;
+  background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("cover.jpg");
+  background-size:cover;background-position:center;
 }
-
 .hero h1{
-  color:gold;
-  text-shadow:0 0 20px yellow;
-  font-size:34px;
+  color:gold;font-size:38px;
+  text-shadow:0 0 20px gold;
 }
-
 .profile{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  border:5px solid gold;
-  box-shadow:0 0 30px gold;
-  margin:20px auto;
-  object-fit:cover;
-  display:block;
+  width:155px;height:155px;border-radius:50%;
+  border:5px solid gold;object-fit:cover;
+  box-shadow:0 0 30px gold;margin:20px auto
 }
-
-/* BUTTONS */
 .btn{
-  display:inline-block;
-  padding:12px 24px;
-  border-radius:30px;
-  margin:8px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+  display:inline-block;padding:12px 24px;margin:8px;
+  border-radius:30px;color:white;text-decoration:none;font-weight:bold
 }
-
-.whatsapp{background:#25D366}
-.youtube{background:#ff0000}
-.support{background:#28a745}
+.whatsapp{background:#25D366}.youtube{background:red}.support{background:#28a745}
 
 /* SECTION */
 .section{
-  background:white;
-  color:#222;
-  margin:22px auto;
-  padding:25px;
-  width:90%;
-  max-width:1100px;
-  border-radius:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  width:90%;max-width:1100px;margin:25px auto;
+  background:white;color:#222;padding:28px;
+  border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.3)
+}
+.section h2{color:#0b4da2;margin-bottom:20px}
+
+/* SLIDER */
+.slider{overflow:hidden;border-radius:18px}
+.slides{display:flex;animation:slide 9s infinite}
+.slides img{min-width:100%;height:260px;object-fit:cover}
+@keyframes slide{
+  0%,25%{transform:translateX(0)}
+  35%,60%{transform:translateX(-100%)}
+  70%,100%{transform:translateX(-200%)}
 }
 
-.section h2{
-  color:#0b4da2;
-  margin-bottom:20px;
-  font-size:30px;
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
-
-.gallery img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:18px;
-  box-shadow:0 8px 22px rgba(0,0,0,.25);
-}
-
-/* SERVICES FIX */
+/* SERVICES */
 .services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  margin-top:20px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px
+}
+.service{
+  background:#f5f8ff;color:#0b4da2;padding:20px;
+  border-radius:16px;font-weight:bold;
+  box-shadow:0 6px 18px rgba(0,0,0,.15)
 }
 
-.service{
-  background:#f5f8ff;
-  color:#0b4da2;
-  padding:18px;
-  border-radius:15px;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,.12);
+/* DONATION */
+.qr{
+  width:220px;max-width:90%;
+  border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.25)
 }
 
 /* FORM */
 input,textarea{
-  width:90%;
-  max-width:520px;
-  padding:13px;
-  margin:8px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:15px;
+  width:90%;max-width:520px;padding:13px;margin:8px;
+  border-radius:10px;border:1px solid #ccc;font-size:15px
 }
-
 textarea{height:120px}
-
 button{
-  padding:13px 28px;
-  background:#0b4da2;
-  color:white;
-  border:none;
-  border-radius:30px;
-  font-weight:bold;
-  cursor:pointer;
+  padding:13px 28px;border:none;border-radius:30px;
+  background:#0b4da2;color:white;font-weight:bold;cursor:pointer
 }
 
-/* FOOTER */
-footer{
-  padding:25px;
+/* GALLERY ZOOM */
+.zoom-img{cursor:pointer;transition:.3s}
+.zoom-img:hover{transform:scale(1.04)}
+.modal{
+  display:none;position:fixed;z-index:1000;inset:0;
+  background:rgba(0,0,0,.9);align-items:center;justify-content:center
+}
+.modal img{max-width:90%;max-height:85%;border-radius:15px}
+.close{
+  position:absolute;top:20px;right:30px;color:white;
+  font-size:35px;cursor:pointer
 }
 
-/* MOBILE */
+/* FLOAT WHATSAPP */
+.float{
+  position:fixed;right:18px;bottom:18px;background:#25D366;
+  color:white;width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:28px;z-index:999
+}
+
+footer{padding:25px}
+
 @media(max-width:600px){
-  .hero h1{font-size:25px}
-  .section h2{font-size:24px}
-  .profile{width:135px;height:135px}
+  .hero h1{font-size:26px}
+  .slides img{height:220px}
+  .navbar a{font-size:14px;margin:2px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#work">Work</a>
+  <a href="#services">Services</a>
+  <a href="#prayer">Prayer</a>
+  <a href="#donate">Donate</a>
+</div>
+
+<div class="hero" id="home">
   <h1>Holy Spirit Fellowship Global Ministry</h1>
   <p>A Place of Prayer • Healing • Deliverance</p>
 
   <img src="your-photo.jpg" class="profile" alt="Pastor Photo">
 
-  <h3>Preacher: Bro. Pendyala Suresh</h3>
-  <p>📍 Tadepalligudem</p>
+  <h3>Bro. Pendyala Suresh</h3>
+  <p>📍 Tadepalligudem, West Godavari</p>
   <p>📞 +91 8341023058</p>
 
   <a href="https://wa.me/918341023058" class="btn whatsapp">WhatsApp</a>
   <a href="https://youtube.com/@hfgmministry" class="btn youtube">YouTube</a>
-  <a href="https://wa.me/918341023058" class="btn support">Support</a>
+  <a href="#donate" class="btn support">Support</a>
 </div>
 
-<!-- MINISTRY WORK -->
-<div class="section">
+<div class="section" id="work">
   <h2>Our Ministry Work</h2>
-  <div class="gallery">
-    <img src="cover.jpg" alt="Ministry Work 1">
-    <img src="g.jpg" alt="Ministry Work 2">
-    <img src="cover.jpg" alt="Ministry Work 3">
+  <div class="slider">
+    <div class="slides">
+      <img src="cover.jpg" class="zoom-img" onclick="openImg(this.src)">
+      <img src="g.jpg" class="zoom-img" onclick="openImg(this.src)">
+      <img src="cover.jpg" class="zoom-img" onclick="openImg(this.src)">
+    </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<div class="section">
+<div class="section" id="services">
   <h2>Our Ministry Services</h2>
-
   <div class="services">
-    <div class="service">🙏 Prayer</div>
-    <div class="service">🔥 Healing</div>
+    <div class="service">🙏 Prayer & Worship</div>
+    <div class="service">🔥 Healing & Deliverance</div>
     <div class="service">🍲 Food Distribution</div>
     <div class="service">🏠 Orphans Care</div>
     <div class="service">🏥 Medical Camps</div>
@@ -180,24 +170,31 @@ footer{
   </div>
 </div>
 
-<!-- YOUTUBE -->
 <div class="section">
-  <h2>YouTube</h2>
+  <h2>YouTube Video</h2>
   <iframe width="100%" height="260"
-    src="https://www.youtube.com/embed/e0BdlIK9bUA"
-    frameborder="0" allowfullscreen>
-  </iframe>
+  src="https://www.youtube.com/embed/e0BdlIK9bUA"
+  frameborder="0" allowfullscreen></iframe>
 </div>
 
-<!-- PRAYER FORM -->
-<div class="section">
-  <h2>🙏 Prayer Request</h2>
+<div class="section" id="prayer">
+  <h2>🙏 ప్రార్థన అభ్యర్థన | Prayer Request</h2>
+  <p>మీ ప్రార్థన అవసరాన్ని పంపండి • Send your request</p>
 
-  <input id="name" placeholder="Your Name / మీ పేరు">
-  <input id="phone" placeholder="Phone Number">
-  <textarea id="prayer" placeholder="Prayer Request / మీ ప్రార్థన"></textarea>
-  <br>
-  <button onclick="submitPrayer()">Submit Prayer</button>
+  <form onsubmit="submitPrayer();return false;">
+    <input id="name" placeholder="Your Name / మీ పేరు" required><br>
+    <input id="phone" placeholder="Phone Number" required><br>
+    <textarea id="prayerText" placeholder="Prayer Request / మీ ప్రార్థన" required></textarea><br>
+    <button type="submit">Submit Prayer</button>
+  </form>
+</div>
+
+<div class="section" id="donate">
+  <h2>Support Our Ministry</h2>
+  <p>మీ సహాయం ద్వారా పరిచర్య ఇంకా ముందుకు సాగుతుంది.</p>
+  <img src="qr.jpg" class="qr" alt="Donation QR">
+  <h3>UPI / Phone: +91 8341023058</h3>
+  <a href="https://wa.me/918341023058" class="btn support">Support on WhatsApp</a>
 </div>
 
 <footer>
@@ -205,43 +202,31 @@ footer{
   <p>All Are Welcome 🙏</p>
 </footer>
 
-<!-- FIREBASE -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+<a class="float" href="https://wa.me/918341023058">💬</a>
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBlyi5hI-jSSyIf-H9rnpP_4Ldj6Cfpqu8",
-  authDomain: "hfgm-ministry.firebaseapp.com",
-  projectId: "hfgm-ministry",
-  storageBucket: "hfgm-ministry.firebasestorage.app",
-  messagingSenderId: "1079389581104",
-  appId: "1:1079389581104:web:3086069ef3d1a09c7fe2f5"
-};
+<div class="modal" id="modal" onclick="closeImg()">
+  <span class="close">×</span>
+  <img id="modalImg">
+</div>
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-window.submitPrayer = async function(){
+<script>
+function openImg(src){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("modalImg").src=src;
+}
+function closeImg(){
+  document.getElementById("modal").style.display="none";
+}
+function submitPrayer(){
   let name=document.getElementById("name").value;
   let phone=document.getElementById("phone").value;
-  let prayer=document.getElementById("prayer").value;
+  let prayer=document.getElementById("prayerText").value;
 
-  if(!name || !phone || !prayer){
-    alert("Please fill all fields");
-    return;
-  }
-
-  await addDoc(collection(db,"prayers"),{
-    name:name,
-    phone:phone,
-    prayer:prayer,
-    time:new Date()
-  });
-
-  alert("Prayer Submitted 🙏");
+  let msg="🙏 Prayer Request%0AName: "+name+"%0APhone: "+phone+"%0APrayer: "+prayer;
+  window.open("https://wa.me/918341023058?text="+msg,"_blank");
 }
 </script>
 
 </body>
 </html>
+
