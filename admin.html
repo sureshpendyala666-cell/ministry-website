@@ -3,7 +3,6 @@
 <head>
 <title>Admin Panel</title>
 
-<!-- Firebase CDN (WORKING VERSION) -->
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
@@ -14,28 +13,76 @@ background:#0b1f3a;
 color:white;
 padding:20px;
 }
-h1{
+
+.login-box, .admin{
+max-width:400px;
+margin:auto;
 text-align:center;
 }
+
+input{
+padding:10px;
+width:100%;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+button{
+padding:10px;
+border:none;
+border-radius:10px;
+background:#ff9800;
+color:white;
+cursor:pointer;
+}
+
 .box{
 background:white;
 color:black;
 padding:10px;
 margin:10px 0;
 border-radius:10px;
+text-align:left;
+}
+
+.delete{
+background:red;
+margin-top:10px;
 }
 </style>
 
 </head>
 <body>
 
-<h1>Prayer Requests (Admin)</h1>
+<div class="login-box" id="login">
+<h2>Admin Login</h2>
+<input type="password" id="pass" placeholder="Enter Password">
+<button onclick="login()">Login</button>
+</div>
 
-<div id="data">Loading...</div>
+<div class="admin" id="admin" style="display:none;">
+<h1>Prayer Requests</h1>
+<div id="data"></div>
+</div>
 
 <script>
 
-// 🔥 YOUR FIREBASE CONFIG (IMPORTANT)
+// 🔐 SIMPLE PASSWORD
+const ADMIN_PASS = "1234"; // 👉 change this
+
+function login(){
+let p = document.getElementById("pass").value;
+if(p === ADMIN_PASS){
+document.getElementById("login").style.display="none";
+document.getElementById("admin").style.display="block";
+loadData();
+}else{
+alert("Wrong Password");
+}
+}
+
+// 🔥 Firebase config (REPLACE WITH YOUR GREEN CODE)
 const firebaseConfig = {
 apiKey: "PASTE_HERE",
 authDomain: "PASTE_HERE",
@@ -46,29 +93,39 @@ messagingSenderId: "PASTE_HERE",
 appId: "PASTE_HERE"
 };
 
-// Initialize
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-// Fetch Data
+// 📄 Load data
+function loadData(){
 db.ref("prayers").on("value", function(snapshot){
 let html="";
 
 snapshot.forEach(function(child){
 let data = child.val();
+let id = child.key;
 
 html += `
 <div class="box">
 <b>Name:</b> ${data.name}<br>
 <b>Phone:</b> ${data.phone}<br>
 <b>Prayer:</b> ${data.prayer}
+
+<button class="delete" onclick="deleteData('${id}')">Delete</button>
 </div>
 `;
 });
 
-document.getElementById("data").innerHTML = html || "No data found";
-
+document.getElementById("data").innerHTML = html || "No Data";
 });
+}
+
+// ❌ Delete function
+function deleteData(id){
+if(confirm("Delete this prayer?")){
+db.ref("prayers/"+id).remove();
+}
+}
 
 </script>
 
