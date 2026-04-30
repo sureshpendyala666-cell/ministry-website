@@ -4,45 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HFGM Ministry</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 html{scroll-behavior:smooth}
 body{background:#071c24;color:white;text-align:center}
+
 .nav{position:sticky;top:0;z-index:999;background:#041017;padding:12px}
 .nav a{color:white;text-decoration:none;margin:5px;padding:8px 14px;border-radius:25px;font-weight:bold;display:inline-block}
 .nav a:hover{background:#0b4da2}
 
-.hero{min-height:90vh;padding:70px 20px;background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),url("cover.jpg") center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero{min-height:85vh;padding:70px 20px;background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),url("cover.jpg") center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .hero h1{color:gold;font-size:42px;text-shadow:0 0 18px gold,0 0 35px gold}
 .hero p{font-size:18px;margin:8px}
 .profile{width:165px;height:165px;border-radius:50%;border:5px solid gold;object-fit:cover;box-shadow:0 0 35px gold;margin:22px auto}
 
 .btn{display:inline-block;padding:13px 26px;margin:8px;border-radius:30px;color:white;text-decoration:none;font-weight:bold;box-shadow:0 8px 20px rgba(0,0,0,.3)}
-.whatsapp{background:#25D366}.youtube{background:red}.support{background:#28a745}.upi{background:#ff9800}
+.whatsapp{background:#25D366}.youtube{background:red}.support{background:#28a745}
 
 .section{width:90%;max-width:1150px;margin:28px auto;padding:28px;background:white;color:#222;border-radius:24px;box-shadow:0 12px 35px rgba(0,0,0,.32)}
 .section h2{color:#0b4da2;font-size:32px;margin-bottom:22px}
 
-.work-grid,.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.work-card,.service,.donation-box{background:#f7f9ff;border-radius:20px;box-shadow:0 8px 22px rgba(0,0,0,.18);padding:18px}
-.work-card img{width:100%;height:230px;object-fit:cover;border-radius:15px}
-.service{color:#0b4da2;font-weight:bold;font-size:19px;cursor:pointer}
-.service:hover{background:#0b4da2;color:white}
+.pro-slider{position:relative;overflow:hidden;border-radius:22px}
+.pro-slides{display:flex;transition:transform .7s ease}
+.pro-slide{min-width:100%;position:relative}
+.pro-slide img{width:100%;height:280px;object-fit:cover}
+.caption{position:absolute;left:0;right:0;bottom:0;padding:15px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:white;font-size:22px;font-weight:bold}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.55);color:white;border:none;padding:12px 16px;cursor:pointer;font-size:22px;border-radius:50%}
+.prev{left:12px}.next{right:12px}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.service{background:#f7f9ff;color:#0b4da2;padding:22px;border-radius:18px;font-weight:bold;font-size:18px;box-shadow:0 8px 20px rgba(0,0,0,.15);cursor:pointer;transition:.3s}
+.service:hover{background:#0b4da2;color:white;transform:translateY(-6px)}
 
 iframe{width:100%;max-width:760px;height:320px;border-radius:18px}
 input,textarea{width:90%;max-width:540px;padding:14px;margin:8px;border-radius:12px;border:1px solid #ccc;font-size:16px}
 textarea{height:130px}
 button{padding:14px 32px;border:none;border-radius:30px;background:#0b4da2;color:white;font-weight:bold;cursor:pointer}
-.qr{width:220px;max-width:90%;border-radius:18px;margin:15px;box-shadow:0 8px 25px rgba(0,0,0,.25)}
+
+.qr{width:220px;max-width:90%;border-radius:18px;margin:15px}
 .float{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;z-index:999}
 footer{padding:28px;background:#041017}
 
 .popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;align-items:center;justify-content:center;padding:20px}
-.popup-box{background:white;color:#222;max-width:430px;width:100%;border-radius:25px;padding:28px}
-.close{float:right;font-size:30px;cursor:pointer;color:red}
+.popup-box{background:white;color:#222;max-width:520px;width:100%;border-radius:25px;padding:30px;box-shadow:0 0 35px rgba(255,215,0,.45);animation:pop .3s ease;text-align:left}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.close{float:right;font-size:32px;cursor:pointer;color:red}
+.popup-box h2{color:#0b4da2;margin-bottom:15px;text-align:center}
+.popup-box p{font-size:16px;line-height:1.6;margin-bottom:14px}
+.popup-box ul{padding-left:22px;margin-bottom:18px}
+.popup-box li{margin:8px 0}
 
 @media(max-width:600px){
-.hero h1{font-size:28px}.profile{width:140px;height:140px}.section h2{font-size:25px}iframe{height:230px}
+.hero h1{font-size:28px}.profile{width:140px;height:140px}.section h2{font-size:25px}
+iframe{height:230px}.pro-slide img{height:230px}.caption{font-size:18px}
 }
 </style>
 </head>
@@ -71,23 +86,28 @@ footer{padding:28px;background:#041017}
 </div>
 
 <div class="section" id="work">
-<h2>Our Ministry Work</h2>
-<div class="work-grid">
-<div class="work-card"><img src="work1.jpg"><h3>Prayer Ministry</h3></div>
-<div class="work-card"><img src="work2.jpg"><h3>Healing Service</h3></div>
-<div class="work-card"><img src="work3.jpg"><h3>Outreach Ministry</h3></div>
+<h2>Ministry Highlights</h2>
+
+<div class="pro-slider" id="proSlider">
+<div class="pro-slides" id="proSlides">
+<div class="pro-slide"><img src="work1.jpg"><div class="caption">Prayer Ministry</div></div>
+<div class="pro-slide"><img src="work2.jpg"><div class="caption">Healing Service</div></div>
+<div class="pro-slide"><img src="work3.jpg"><div class="caption">Outreach Ministry</div></div>
+</div>
+<button class="prev" onclick="prevSlide()">❮</button>
+<button class="next" onclick="nextSlide()">❯</button>
 </div>
 </div>
 
 <div class="section" id="services">
 <h2>Our Ministry Services</h2>
 <div class="services">
-<div class="service" onclick="openService('Prayer & Worship')">🙏 Prayer & Worship</div>
-<div class="service" onclick="openService('Healing & Deliverance')">🔥 Healing & Deliverance</div>
-<div class="service" onclick="openService('Food Distribution')">🍲 Food Distribution</div>
-<div class="service" onclick="openService('Orphans Care')">🏠 Orphans Care</div>
-<div class="service" onclick="openService('Medical Camps')">🏥 Medical Camps</div>
-<div class="service" onclick="openService('Education Support')">🎓 Education Support</div>
+<div class="service" onclick="openService('prayer')">🙏 Prayer & Worship</div>
+<div class="service" onclick="openService('healing')">🔥 Healing & Deliverance</div>
+<div class="service" onclick="openService('food')">🍲 Food Distribution</div>
+<div class="service" onclick="openService('orphans')">🏠 Orphans Care</div>
+<div class="service" onclick="openService('medical')">🏥 Medical Camps</div>
+<div class="service" onclick="openService('education')">🎓 Education Support</div>
 </div>
 </div>
 
@@ -109,18 +129,15 @@ footer{padding:28px;background:#041017}
 
 <div class="section" id="donate">
 <h2>🙏 Support Our Ministry</h2>
-<div class="donation-box">
 <p><b>🏦 Bank:</b> SBI</p>
 <p><b>👤 Account Name:</b> Holy Spirit Fellowship Global Ministry Trust</p>
 <p><b>💳 Account No:</b> 45134728400</p>
 <p><b>🔑 IFSC:</b> SBIN0000922</p>
 <img src="qr.jpg" class="qr">
 <br>
-<a href="upi://pay?pn=Holy Spirit Fellowship Global Ministry Trust&cu=INR" class="btn upi">💰 Pay via UPI</a>
 <button onclick="copyDetails()">Copy Bank Details</button>
 <br><br>
 <a href="https://wa.me/918341023058?text=I have sent donation" class="btn whatsapp">Confirm on WhatsApp</a>
-</div>
 </div>
 
 <footer>
@@ -134,12 +151,108 @@ footer{padding:28px;background:#041017}
 <div class="popup-box">
 <span class="close" onclick="closeService()">×</span>
 <h2 id="serviceTitle"></h2>
-<p>ఈ సేవ కోసం మమ్మల్ని WhatsApp లో సంప్రదించండి. Contact us for prayer and ministry support.</p>
-<a id="serviceWhatsapp" class="btn whatsapp" target="_blank">WhatsApp Request</a>
+<p id="serviceText"></p>
+<ul id="servicePoints"></ul>
+<a id="serviceWhatsapp" class="btn whatsapp" target="_blank">Partner / Request on WhatsApp</a>
 </div>
 </div>
 
 <script>
+let slideIndex = 0;
+const proSlides = document.getElementById("proSlides");
+const proTotal = document.querySelectorAll(".pro-slide").length;
+
+function showProSlide(){
+proSlides.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
+}
+function nextSlide(){slideIndex = (slideIndex + 1) % proTotal; showProSlide();}
+function prevSlide(){slideIndex = (slideIndex - 1 + proTotal) % proTotal; showProSlide();}
+setInterval(nextSlide, 3500);
+
+const serviceData = {
+prayer:{
+title:"🙏 Prayer & Worship Ministry",
+text:"We welcome prayer partners from the USA and around the world to stand with us in faith. Through worship, intercession, and the Word of God, we minister to families, youth, and people in need of spiritual encouragement.",
+points:[
+"Weekly prayer support for families and individuals",
+"Online prayer requests through WhatsApp",
+"Telugu gospel worship and Bible teaching",
+"Join us as a prayer partner from anywhere in the world"
+]
+},
+healing:{
+title:"🔥 Healing & Deliverance Ministry",
+text:"Our ministry prays for people who are sick, broken, discouraged, and spiritually burdened. We believe Jesus Christ heals, restores, and delivers. Your prayers and support help us reach more people with hope.",
+points:[
+"Prayer for healing and inner restoration",
+"Deliverance prayer with Biblical guidance",
+"Support for people facing pain, fear, and bondage",
+"Help us conduct healing and prayer meetings"
+]
+},
+food:{
+title:"🍲 Food Distribution for the Poor",
+text:"Many poor families struggle for daily food. Through this outreach, we share food with love and dignity. Support from international partners helps us provide meals to hungry families and elderly people.",
+points:[
+"Food support for poor families",
+"Meal distribution during outreach programs",
+"Support for elderly and needy people",
+"Your donation can help feed more people"
+]
+},
+orphans:{
+title:"🏠 Orphans & Widows Care",
+text:"We desire to care for orphans, widows, and vulnerable people with compassion. Our mission is to show the love of Christ through practical support, prayer, and encouragement.",
+points:[
+"Support for orphans and vulnerable children",
+"Care and encouragement for widows",
+"Basic needs support through ministry partners",
+"Partner with us to bring hope to the helpless"
+]
+},
+medical:{
+title:"🏥 Free Medical Camps",
+text:"Health care is difficult for many poor people in villages. We plan medical camps to help people receive basic health checkups, medicine, and guidance.",
+points:[
+"Free health checkups for poor communities",
+"Medicine support where possible",
+"Village medical outreach programs",
+"Support helps us organize more camps"
+]
+},
+education:{
+title:"🎓 Education Support for Poor Children",
+text:"Education can change a child's future. We support poor students with basic education help, school needs, and encouragement to grow with faith and purpose.",
+points:[
+"School support for poor children",
+"Help with notebooks, bags, and basic needs",
+"Encouragement for children to continue studies",
+"Become a sponsor for a child’s education"
+]
+}
+};
+
+function openService(type){
+const data = serviceData[type];
+document.getElementById("serviceTitle").innerText = data.title;
+document.getElementById("serviceText").innerText = data.text;
+
+const points = document.getElementById("servicePoints");
+points.innerHTML = "";
+data.points.forEach(point => {
+let li = document.createElement("li");
+li.innerText = point;
+points.appendChild(li);
+});
+
+let msg = encodeURIComponent("Hello Pastor Suresh, I want to know more / partner with: " + data.title);
+document.getElementById("serviceWhatsapp").href = "https://wa.me/918341023058?text=" + msg;
+document.getElementById("servicePopup").style.display = "flex";
+}
+function closeService(){
+document.getElementById("servicePopup").style.display = "none";
+}
+
 function sendPrayer(){
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
@@ -152,16 +265,6 @@ function copyDetails(){
 let text="Bank: SBI\nAccount Name: Holy Spirit Fellowship Global Ministry Trust\nAccount No: 45134728400\nIFSC: SBIN0000922";
 navigator.clipboard.writeText(text);
 alert("Bank details copied 👍");
-}
-
-function openService(service){
-document.getElementById("serviceTitle").innerText=service;
-let msg=encodeURIComponent("I need help regarding "+service);
-document.getElementById("serviceWhatsapp").href="https://wa.me/918341023058?text="+msg;
-document.getElementById("servicePopup").style.display="flex";
-}
-function closeService(){
-document.getElementById("servicePopup").style.display="none";
 }
 </script>
 
