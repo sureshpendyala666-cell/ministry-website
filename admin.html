@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
 
+<!-- Firebase CDN (WORKING VERSION) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<style>
+body{
+font-family:Arial;
+background:#0b1f3a;
+color:white;
+padding:20px;
+}
+h1{
+text-align:center;
+}
+.box{
+background:white;
+color:black;
+padding:10px;
+margin:10px 0;
+border-radius:10px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Prayer Requests (Admin)</h1>
+
+<div id="data">Loading...</div>
+
+<script>
+
+// 🔥 YOUR FIREBASE CONFIG (IMPORTANT)
+const firebaseConfig = {
+apiKey: "PASTE_HERE",
+authDomain: "PASTE_HERE",
+databaseURL: "PASTE_HERE",
+projectId: "PASTE_HERE",
+storageBucket: "PASTE_HERE",
+messagingSenderId: "PASTE_HERE",
+appId: "PASTE_HERE"
+};
+
+// Initialize
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+// Fetch Data
+db.ref("prayers").on("value", function(snapshot){
+let html="";
+
+snapshot.forEach(function(child){
+let data = child.val();
+
+html += `
+<div class="box">
+<b>Name:</b> ${data.name}<br>
+<b>Phone:</b> ${data.phone}<br>
+<b>Prayer:</b> ${data.prayer}
+</div>
+`;
+});
+
+document.getElementById("data").innerHTML = html || "No data found";
+
+});
+
+</script>
+
+</body>
+</html>
