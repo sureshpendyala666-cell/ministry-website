@@ -8,123 +8,160 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 html{scroll-behavior:smooth}
-body{background:#061b22;color:white;text-align:center}
+body{
+  background:linear-gradient(135deg,#06151c,#0b4da2);
+  color:white;
+  text-align:center;
+}
 
-.nav{position:sticky;top:0;z-index:999;background:#031219;padding:14px}
-.nav a{color:white;text-decoration:none;margin:6px;padding:8px 12px;font-weight:bold}
+.nav{
+  position:sticky;top:0;z-index:999;
+  background:rgba(3,18,25,.9);
+  padding:12px;
+  backdrop-filter:blur(10px);
+}
+.nav a{
+  color:white;text-decoration:none;margin:5px;
+  padding:8px 13px;border-radius:22px;
+  font-weight:bold;display:inline-block;
+}
+.nav a:hover{background:#0b4da2}
 
 .hero{
-  min-height:85vh;
+  min-height:90vh;
   padding:70px 20px;
-  background:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)),url("cover.jpg") center/cover no-repeat;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  background:linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),url("cover.jpg") center/cover no-repeat;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
 }
-.hero h1{color:gold;font-size:40px;text-shadow:0 0 20px gold}
+.hero h1{
+  color:gold;
+  font-size:42px;
+  text-shadow:0 0 18px gold,0 0 40px gold;
+}
 .hero p{font-size:18px;margin:8px}
-.profile{width:160px;height:160px;border-radius:50%;border:5px solid gold;object-fit:cover;margin:20px;box-shadow:0 0 30px gold}
+.profile{
+  width:165px;height:165px;border-radius:50%;
+  border:5px solid gold;object-fit:cover;
+  margin:22px auto;box-shadow:0 0 35px gold;
+}
 
-.btn{display:inline-block;padding:12px 22px;margin:8px;border-radius:25px;color:white;text-decoration:none;font-weight:bold}
+.btn{
+  display:inline-block;
+  padding:13px 26px;margin:8px;
+  border-radius:30px;color:white;text-decoration:none;
+  font-weight:bold;box-shadow:0 8px 22px rgba(0,0,0,.35);
+  transition:.3s;
+}
+.btn:hover{transform:scale(1.08)}
 .whatsapp{background:#25D366}
-.youtube{background:red}
-.support{background:green}
-.upi{background:#ff9800}
+.youtube{background:#ff0000}
+.support{background:#28a745}
+
+.button-group{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
 
 .section{
-  width:90%;
-  max-width:1100px;
-  margin:25px auto;
-  padding:25px;
-  background:white;
-  color:#111;
+  width:90%;max-width:1150px;
+  margin:28px auto;padding:28px;
+  background:rgba(255,255,255,.12);
+  color:white;
+  border:1px solid rgba(255,255,255,.25);
   border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,.3)
+  backdrop-filter:blur(12px);
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
 }
-.section h2{font-size:30px;color:#0b4da2;margin-bottom:18px}
+.section h2{
+  color:gold;
+  font-size:32px;
+  margin-bottom:20px;
+  text-shadow:0 0 12px rgba(255,215,0,.6);
+}
+.section p{line-height:1.6}
 
 .work-grid,.services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:18px;
 }
 .work-card,.service{
-  background:#f4f7ff;
-  border-radius:18px;
+  background:rgba(255,255,255,.92);
+  color:#0b4da2;
+  border-radius:20px;
   padding:18px;
-  box-shadow:0 6px 18px rgba(0,0,0,.15)
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  transition:.3s;
 }
-.work-card img{width:100%;height:220px;object-fit:cover;border-radius:15px}
-.service{cursor:pointer;font-weight:bold;color:#0b4da2}
-.service:hover{background:#0b4da2;color:white}
+.work-card:hover,.service:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 30px rgba(0,0,0,.4);
+}
+.work-card img{
+  width:100%;height:230px;object-fit:cover;
+  border-radius:16px;margin-bottom:12px;
+}
+.service{font-weight:bold;cursor:pointer}
 
-iframe{width:100%;max-width:760px;height:320px;border-radius:18px}
+iframe{
+  width:100%;max-width:760px;height:320px;
+  border-radius:18px;
+}
 
 input,textarea{
-  width:90%;
-  max-width:520px;
-  padding:13px;
-  margin:8px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:16px
+  width:90%;max-width:540px;
+  padding:14px;margin:8px;
+  border-radius:12px;border:1px solid #ddd;
+  font-size:16px;
 }
-textarea{height:120px}
+textarea{height:130px}
 button{
-  padding:12px 25px;
-  border:none;
-  border-radius:25px;
-  background:#0b4da2;
-  color:white;
-  font-weight:bold;
-  cursor:pointer
+  padding:14px 32px;border:none;
+  border-radius:30px;background:#0b4da2;
+  color:white;font-weight:bold;cursor:pointer;
 }
 
-.qr{width:220px;max-width:90%;border-radius:15px;margin:15px}
+.qr{
+  width:220px;max-width:90%;
+  border-radius:18px;margin:15px;
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
 
 .float{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:60px;
-  height:60px;
-  background:#25D366;
-  color:white;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:28px;
-  z-index:999
+  position:fixed;right:18px;bottom:18px;
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;text-decoration:none;z-index:999;
 }
 
 .popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.75);
-  z-index:2000;
-  align-items:center;
-  justify-content:center;
-  padding:20px
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.78);
+  z-index:2000;align-items:center;justify-content:center;
+  padding:20px;
 }
 .popup-box{
-  background:white;
-  color:#111;
-  max-width:450px;
-  width:100%;
-  padding:25px;
-  border-radius:22px
+  background:white;color:#111;
+  max-width:480px;width:100%;
+  padding:28px;border-radius:25px;
+  text-align:left;
 }
-.close{float:right;font-size:28px;color:red;cursor:pointer}
+.popup-box h2{text-align:center;color:#0b4da2}
+.close{float:right;font-size:30px;color:red;cursor:pointer}
 
-footer{padding:25px;background:#031219}
+footer{
+  padding:28px;
+  background:#031219;
+}
 
 @media(max-width:600px){
-  .hero h1{font-size:30px}
+  .hero h1{font-size:28px}
   .profile{width:140px;height:140px}
+  .section{width:92%;padding:22px}
+  .section h2{font-size:25px}
   iframe{height:230px}
 }
 </style>
@@ -137,14 +174,13 @@ footer{padding:25px;background:#031219}
   <a href="#about">About</a>
   <a href="#work">Work</a>
   <a href="#services">Services</a>
-  <a href="#testimony">Testimony</a>
   <a href="#donate">Donate</a>
 </div>
 
 <div class="hero" id="home">
   <h1>Holy Spirit Fellowship Global Ministry</h1>
   <p>A Place of Prayer • Healing • Deliverance</p>
-  <p>Serving India & Reaching Nations</p>
+  <p><b>Serving India & Reaching Nations 🌍</b></p>
 
   <img src="profile.jpg" class="profile">
 
@@ -152,16 +188,18 @@ footer{padding:25px;background:#031219}
   <p>📍 Tadepalligudem, West Godavari</p>
   <p>📞 +91 8341023058</p>
 
-  <a href="https://wa.me/918341023058" class="btn whatsapp">WhatsApp</a>
-  <a href="https://youtube.com/@hfgmministry" class="btn youtube">YouTube</a>
-  <a href="#donate" class="btn support">Support</a>
+  <div class="button-group">
+    <a href="#donate" class="btn support">Donate Now</a>
+    <a href="https://wa.me/918341023058" class="btn whatsapp">Contact Us</a>
+    <a href="https://youtube.com/@hfgmministry" class="btn youtube">YouTube</a>
+  </div>
 </div>
 
 <div class="section" id="about">
   <h2>About Our Ministry</h2>
   <p>Holy Spirit Fellowship Global Ministry is a Christ-centered ministry based in Andhra Pradesh, India.</p>
   <p>We serve people through prayer, healing, deliverance, food support, education support and the Gospel of Jesus Christ.</p>
-  <p><b>🌍 We welcome supporters from USA, UK, Canada, Australia and all nations.</b></p>
+  <p><b>🌍 We welcome partners from USA, UK, Canada, Australia and all nations.</b></p>
 </div>
 
 <div class="section" id="work">
@@ -185,15 +223,6 @@ footer{padding:25px;background:#031219}
   </div>
 </div>
 
-<div class="section" id="testimony">
-  <h2>Testimonies</h2>
-  <div class="services">
-    <div class="service">“God answered our prayers.”</div>
-    <div class="service">“We received healing.”</div>
-    <div class="service">“Our life changed.”</div>
-  </div>
-</div>
-
 <div class="section">
   <h2>Monthly Ministry Impact</h2>
   <div class="services">
@@ -205,22 +234,14 @@ footer{padding:25px;background:#031219}
 </div>
 
 <div class="section">
-  <h2>YouTube Video</h2>
-  <iframe src="https://www.youtube.com/embed/e0BdlIK9bUA" frameborder="0" allowfullscreen></iframe>
+  <h2>YouTube Video</h2
+<iframe src="https://www.youtube.com/embed/e0BdlIK9bUA" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="section" id="donate">
-  <h2>🌍 Partner With Us Internationally</h2>
-  <p>Help us reach poor families, children, widows and people in need with prayer, food, education and the Gospel.</p>
+  <h2>🌍 Partner With Us</h2>
+  <p>Your support helps us reach poor families, children, widows and people in need.</p>
 
-  <div class="services">
-    <div class="service">🍲 Feed a Family<br><br><b>$15 / ₹1000</b></div>
-    <div class="service">🎓 Sponsor Education<br><br><b>$25 / ₹2000</b></div>
-    <div class="service">🏥 Medical Help<br><br><b>$30 / ₹2500</b></div>
-    <div class="service">🙏 Monthly Partner<br><br><b>$10+</b></div>
-  </div>
-
-  <br>
   <p><b>Bank:</b> SBI</p>
   <p><b>Account Name:</b> Holy Spirit Fellowship Global Ministry Trust</p>
   <p><b>Account No:</b> 45134728400</p>
@@ -228,10 +249,9 @@ footer{padding:25px;background:#031219}
 
   <img src="qr.jpg" class="qr"><br>
 
-  <button onclick="copyDetails()">Copy Bank Details</button><br><br>
-
+  <button onclick="copyDetails()">Copy Bank Details</button>
+  <br><br>
   <a href="https://wa.me/918341023058?text=I want to partner with HFGM Ministry" class="btn whatsapp">Become a Partner</a>
-  <a href="https://paypal.me/YOURPAYPALLINK" class="btn support" target="_blank">Donate via PayPal</a>
 </div>
 
 <div class="section" id="prayer">
@@ -256,6 +276,7 @@ footer{padding:25px;background:#031219}
     <span class="close" onclick="closeService()">×</span>
     <h2 id="serviceTitle"></h2>
     <p>We welcome international partners to support this ministry. Contact us for prayer, partnership and ministry support.</p>
+    <br>
     <a id="serviceWhatsapp" class="btn whatsapp" target="_blank">WhatsApp Request</a>
   </div>
 </div>
@@ -283,9 +304,3 @@ function sendPrayer(){
 function copyDetails(){
   let text="Bank: SBI\nAccount Name: Holy Spirit Fellowship Global Ministry Trust\nAccount No: 45134728400\nIFSC: SBIN0000922";
   navigator.clipboard.writeText(text);
-  alert("Bank details copied 👍");
-}
-</script>
-
-</body>
-</html>
